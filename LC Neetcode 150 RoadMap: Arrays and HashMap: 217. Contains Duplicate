@@ -18,3 +18,17 @@ class Solution:
 ## TC: O(2N)->n
 ## SC: O(1)
 
+## Using Counter
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        cnter= Counter(nums)
+        for key, value in cnter.items():
+            if value>=2:
+                return True
+        return False
+
+## TC: O(n)
+## SC: O(N)
+
+##
