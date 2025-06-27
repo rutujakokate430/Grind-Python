@@ -1,0 +1,20 @@
+LC Neetcode 150 RoadMap: Arrays and HashMap: 217. Contains Duplicate
+
+#BruteForce:
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        nums= sorted(nums)
+        left, right=0, 1
+
+        while right< len(nums):
+            if nums[left]!=nums[right]:
+                left+=1
+                right+=1
+            else:
+                return True
+        return False
+            
+## TC: O(2N)->n
+## SC: O(1)
+
