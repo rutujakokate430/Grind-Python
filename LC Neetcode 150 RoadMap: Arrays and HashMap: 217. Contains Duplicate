@@ -16,7 +16,7 @@ class Solution:
         return False
             
 ## TC: O(2N)->n
-## SC: O(1)
+## SC: O(n) coz we sorted
 
 ## Using Counter
 
