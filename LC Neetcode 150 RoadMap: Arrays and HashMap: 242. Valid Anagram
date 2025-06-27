@@ -1,0 +1,38 @@
+LC Neetcode 150 RoadMap: Arrays and HashMap: 242. Valid Anagram
+
+## Using Hashmap
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return Counter(s)==Counter(t)
+## Time Complexity:
+Building a Counter for s is O(n).
+
+Building a Counter for t is O(m).
+
+Comparing two Counters is O(k), where k is the number of unique characters.
+
+Overall: O(n + m), which is linear.
+
+## Space Complexity:
+Counters store frequencies for unique characters, so O(k) where k ≤ n + m.  
+
+## BRUTE FORCE:
+# class Solution:
+#     def isAnagram(self, s: str, t: str) -> bool:
+#         s= sorted(s)
+#         t= sorted(t)
+#         if s==t:
+#             return True
+#         return False
+
+## Time Complexity:
+Sorting s takes O(n log n) (where n = length of s).
+
+Sorting t also takes O(m log m) (m = length of t).
+
+Comparing sorted lists is O(n).
+
+Overall: O(n log n + m log m), typically O(n log n) if n ≈ m.
+
+ ## Space Complexity:
+Sorting creates new lists, so O(n + m) extra space.
