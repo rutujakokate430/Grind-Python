@@ -31,4 +31,17 @@ class Solution:
 ## TC: O(n)
 ## SC: O(N)
 
-##
+## Hash Set
+
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        seen=set()
+        for rch in nums:
+            if rch in seen:
+                return True
+            else:
+                seen.add(rch)
+            
+        return False
+
+## TC: SC: O(N)
