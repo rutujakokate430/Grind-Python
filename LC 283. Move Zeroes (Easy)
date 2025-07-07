@@ -36,3 +36,7 @@ class Solution:
                 nums[right], nums[left]= nums[left], nums[right]
                 left+=1
 
+    ## Time complexity: O(N) where n is the length of nums
+    ## space compexity is O(1)
+
+
