@@ -1,0 +1,46 @@
+LC: 17. Letter Combinations of a Phone Number (Medium)
+
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
+
+A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+
+
+ 
+
+Example 1:
+
+Input: digits = "23"
+Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+Example 2:
+
+Input: digits = ""
+Output: []
+Example 3:
+
+Input: digits = "2"
+Output: ["a","b","c"]
+ 
+
+Constraints:
+
+0 <= digits.length <= 4
+digits[i] is a digit in the range ['2', '9'].
+
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        if not digits:
+            return []
+        
+        dialpad= {"2":["a", "b","c"], "3":["d", "e", "f"], "4":["g", "h", "i"], "5":["j", "k", "l"], "6":["m", "n", "o"], "7":["p", "q", "r","s"], "8":["t", "u", "v"], "9":["w", "x","y", "z"]}
+
+        letters= [dialpad[digit] for digit in digits if digit in dialpad]
+
+        comb= itertools.product(*letters) # TC: O(M)
+        return ["".join(c) for c in comb]  # TC - O(N), O(M*N)
+
+
+
+## TC: o(n)- iterate through digits o(n) where(n is lenth of digits) and look up dict - o(1), cartesian prod - O(m) m- length of list of lists, O(M*N)
+## Space complexity: o(n)- created list- letters, comb= iterable O(1) as it is a lazily created one,    O(M*N)
+# 
+X operators coz we are getting combinations
