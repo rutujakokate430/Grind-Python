@@ -35,6 +35,6 @@ class Solution:
         return reversed_num
 
 
-### tc: o(n), N-Number of digits
-#### SC: O(N), strings of digits
+### tc: o(n), N-Number of digits, O(Log n)- as the number of digits we process depends on number of digits in that numver
+#### SC: O(N), strings of digits O(Log n)- as the number of digits we process depends on number of digits in that numver
 
