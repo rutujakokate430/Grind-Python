@@ -1,0 +1,18 @@
+136. Single Number (Easy)
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        seen= []
+
+        for ech in nums:
+            if ech not in seen:
+                seen.append(ech)
+            else:
+                seen.remove(ech)
+        return seen.pop()
+
+
+
+
+            
+        
