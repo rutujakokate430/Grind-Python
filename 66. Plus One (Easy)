@@ -1,0 +1,11 @@
+66. Plus One (Easy)
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        curr_Sum=0
+        for digit in digits:
+            curr_Sum= 10*curr_Sum+ digit
+        
+        added_sum= curr_Sum+1
+
+        return [int(dig) for dig in str(added_sum)]
