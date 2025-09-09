@@ -1,0 +1,41 @@
+Codesignal: Practice Progressive Single-Function Question (Level 3)
+
+
+The next step is to support the operation for finding the nearest integer in the container greater than the provided one:
+
+GET_NEXT <value> should return the minimal integer in the container that is strictly greater than the provided value. In case there is no such integer in the container, return empty string.
+
+def solution(queries):
+    container=[]
+    result=[]
+    
+    for query in queries:
+        command, value= query[0], int(query[1])
+        
+        if command=="ADD":
+            container.append(value)
+            result.append("")
+        elif command=="EXISTS":
+            if value in container:
+                result.append("true")
+            else:
+                result.append("false")
+        elif command== "REMOVE":
+            if value in container:
+                result.append("true")
+                container.remove(value)
+            else:
+                result.append("false")
+        elif command== "GET_NEXT":
+            next_val=""
+            sorted_container= sorted(container)
+            for v in sorted_container:
+                if v>value:
+                    next_val= str(v)
+                    break
+            result.append(next_val)
+                                                
+    return result
+                
+    
+    
