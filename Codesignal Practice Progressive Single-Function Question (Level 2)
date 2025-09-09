@@ -1,0 +1,31 @@
+Codesignal 
+
+The next step is to support removal from the container:
+
+REMOVE <value> should remove a single occurrence of the specified value from the container. If the value has multiple occurrences, only one of them should be removed.
+def solution(queries):
+    container=[]
+    result=[]
+    
+    for query in queries:
+        command, value= query[0], int(query[1])
+        
+        if command=="ADD":
+            container.append(value)
+            result.append("")
+        elif command=="EXISTS":
+            if value in container:
+                result.append("true")
+            else:
+                result.append("false")
+        elif command== "REMOVE":
+            if value in container:
+                result.append("true")
+                container.remove(value)
+            else:
+                result.append("false")
+                           
+    return result
+                
+    
+    
