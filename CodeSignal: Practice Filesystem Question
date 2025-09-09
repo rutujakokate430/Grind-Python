@@ -1,0 +1,25 @@
+CodeSignal: Practice Filesystem Question
+
+class Container:
+    def __init__(self, nums=None):
+        if nums is None:
+            self.nums = []
+        else:
+            self.nums = sorted(nums)
+
+    def add(self, value: int) -> None:
+        self.nums.append(value)
+        self.nums.sort()
+
+    def delete(self, value: int) -> bool:
+        if value in self.nums:
+            self.nums.remove(value)
+            return True
+        return False
+
+    def get_median(self) -> int:
+        if not self.nums:
+            raise RuntimeError("Container is empty")
+        n = len(self.nums)
+        mid = n // 2
+        return self.nums[mid] if n % 2 == 1 else self.nums[mid - 1]
