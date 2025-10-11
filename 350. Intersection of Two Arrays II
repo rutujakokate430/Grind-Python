@@ -1,0 +1,21 @@
+350. Intersection of Two Arrays II
+
+from collections import Counter
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        res= []
+        cnt_nums1= Counter(nums1)  #{1: 2, 2: 2}
+        for ele in nums2:
+            if cnt_nums1[ele]>0:
+                res.append(ele)
+                cnt_nums1[ele]-=1
+        
+        return res
+
+        
+
+
+
+
+
+        
