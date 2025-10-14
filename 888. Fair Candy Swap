@@ -1,0 +1,13 @@
+888. Fair Candy Swap
+
+class Solution:
+    def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:
+        AliceTCandies= sum(aliceSizes)
+        BobTCandies= sum(bobSizes)
+        diff= (AliceTCandies- BobTCandies)//2
+
+        for x in aliceSizes:
+            y= x- diff
+            if y in bobSizes:
+                return [x, y]
+        
