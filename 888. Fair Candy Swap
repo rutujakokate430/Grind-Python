@@ -1,5 +1,6 @@
 888. Fair Candy Swap
 
+##TC: O(N^2)
 class Solution:
     def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:
         AliceTCandies= sum(aliceSizes)
@@ -9,5 +10,20 @@ class Solution:
         for x in aliceSizes:
             y= x- diff
             if y in bobSizes:
+                return [x, y]
+
+
+Improved: O(N) -- Set helps with constant time lookup 
+
+class Solution:
+    def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:
+        AliceTCandies= sum(aliceSizes)
+        BobTCandies= sum(bobSizes)
+        diff= (AliceTCandies- BobTCandies)//2
+        bob_set= set(bobSizes)
+
+        for x in aliceSizes:
+            y= x- diff
+            if y in bob_set:
                 return [x, y]
         
