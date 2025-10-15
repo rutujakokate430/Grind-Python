@@ -1,0 +1,10 @@
+LC: 1150. Check If a Number Is Majority Element in a Sorted Array
+
+from collections import Counter
+class Solution:
+    def isMajorityElement(self, nums: List[int], target: int) -> bool:
+        if nums.count(target)> len(nums)//2:
+            return True
+        return False
+
+
