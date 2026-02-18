@@ -1,0 +1,11 @@
+Decimal to binary conversion
+
+dec = 10
+binry=[]
+
+while dec>0:
+    rem= dec%2
+    binry.append(str(rem))
+    dec= dec//2
+
+print(("".join(binry[::-1])))
