@@ -1,0 +1,12 @@
+binary= 1010
+result=0
+index=0
+
+while binary>0:
+    last_dig= binary%10
+    result+= last_dig* 2**index
+    index+=1
+    binary=binary//10
+print(result)
+
+
