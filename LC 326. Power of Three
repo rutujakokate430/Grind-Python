@@ -1,0 +1,12 @@
+326. Power of Three
+
+class Solution:
+    def isPowerOfThree(self, n: int) -> bool:
+        if n<=0: return False
+        res=0
+        while n!=0:
+            rem= n%3
+            res+=rem
+            n=n//3
+
+        return res==1
