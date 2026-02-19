@@ -1,0 +1,39 @@
+231. Power of Two
+
+Approach 1:
+
+Loop through 0->n and check for each if 2^i==n
+
+for i in range(n):
+  if 2**i==n:
+      return True
+
+=====================================================
+Approach 2: 
+
+A Binary number will only have one 1 
+eg: 16-> 10000 -> binary
+eg: 5 ->   101 -> Not binary
+we loop through and get remainder and if its ==1 then its Binary else not binart 
+
+
+if n<=0: return False
+result=0
+while n!=0:
+  rem= n%2
+  result+= rem
+  n=n//2
+
+return result==1
+====================================================
+Approach 3: 
+
+We check if & AND operation of n and n-1 ==0, 
+eg: 1000 ->8
+    0111 - 7
+-------------- AND Operation
+    0000   (both should be 1 to be 1), this n is binar
+    
+
+return n>0 and n & (n-1)==0
+  
