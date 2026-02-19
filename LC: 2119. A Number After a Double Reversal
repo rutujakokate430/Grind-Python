@@ -1,0 +1,20 @@
+2119. A Number After a Double Reversal
+
+class Solution:
+    def isSameAfterReversals(self, num: int) -> bool:
+
+        def reverse(n):
+            rev_result=0
+            while n!=0:
+                last_dig= n%10
+                rev_result= rev_result*10+ last_dig
+                n= n//10
+        
+            return rev_result
+        
+        reverse1= reverse(num)
+        reverse2= reverse(reverse1)
+
+        return num== reverse2
+        
+        
