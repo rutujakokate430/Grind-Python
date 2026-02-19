@@ -1,0 +1,13 @@
+461. Hamming Distance
+
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        rem= x^y 
+        result=0
+        while rem!=0:
+            resi= rem%2
+            if resi==1:
+                result+=1
+            rem= rem//2
+        
+        return result
