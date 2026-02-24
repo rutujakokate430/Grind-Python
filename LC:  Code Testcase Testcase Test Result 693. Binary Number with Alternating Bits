@@ -1,0 +1,11 @@
+693. Binary Number with Alternating Bits
+
+class Solution:
+    def hasAlternatingBits(self, n: int) -> bool:
+        prev=-1
+        while n!=0:
+            if n%2== prev:  # if same as precv, meaning its not alternaing
+                return False
+            prev= n%2
+            n=n//2
+        return True
