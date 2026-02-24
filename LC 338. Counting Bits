@@ -1,0 +1,12 @@
+338. Counting Bits
+
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        res=[]
+        for i in range(n+1):
+            res.append(bin(i).count("1"))
+
+        return res
+
+tc: NLogN (Bin conversion divides n by 2 each time)
+SC: O(N) 
