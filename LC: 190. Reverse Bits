@@ -1,0 +1,7 @@
+190. Reverse Bits
+
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        bin_rep= list("{:032b}".format(n))
+        bin_rep.reverse()
+        return int("".join(bin_rep), 2)
