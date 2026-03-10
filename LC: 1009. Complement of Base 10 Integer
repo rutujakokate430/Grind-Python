@@ -1,0 +1,9 @@
+1009. Complement of Base 10 Integer
+
+class Solution:
+    def bitwiseComplement(self, n: int) -> int:
+        n_bin = len(bin(n)[2:])
+        ones= '1'* n_bin
+        return int(ones,2)- n
+
+        
